@@ -8,5 +8,6 @@ router.post("/signup", signup);
 router.post("/login", login);
 
 router.post("/logout", logout);
+// @TODO: add /refresh-token auth route (1:11:28)
 
 export default router;

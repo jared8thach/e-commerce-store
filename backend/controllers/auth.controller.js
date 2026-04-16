@@ -73,7 +73,25 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  res.send("Login route called");
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    // if user exists and password matches, generate tokens
+    if (user && (await user.comparePassword(password))) {
+      // authenticate user
+      const { accessToken, refreshToken } = generateTokens(user._id);
+      await storeRefreshToken(user._id, refreshToken);
+      setCookies(res, accessToken, refreshToken);
+      return res.status(200).json({ message: "User logged in successfully"});
+    } else {
+      // else, cannot authenticate
+      console.warn("Email and/or password incorrect");
+      res.status(400).json({ message: "Email and/or password incorrect" });
+    }
+  } catch (error) {
+    console.error(`Server error: ${ error.message }`);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 export const logout = async (req, res) => {
