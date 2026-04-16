@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
 // function to generate both access and refresh tokens (use env secrets)
-const generateTokens = (userId) => {
+export const generateTokens = (userId) => {
   const accessToken = jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: "15m",
   });
@@ -15,7 +15,7 @@ const generateTokens = (userId) => {
 };
 
 // function to store refresh token in Redis
-const storeRefreshToken = async (userId, refreshToken) => {
+export const storeRefreshToken = async (userId, refreshToken) => {
   // set a 7d expiration on refresh token
   await redis.set(
     `refresh_token:${userId}`,
@@ -26,7 +26,7 @@ const storeRefreshToken = async (userId, refreshToken) => {
 };
 
 // function to set browser cookies with access and refresh tokens
-const setCookies = (res, accessToken, refreshToken) => {
+export const setCookies = (res, accessToken, refreshToken) => {
   res.cookie("accessToken", accessToken, {
     httpOnly: true, // prevents cross site scripting (XSS) attacks
     secure: process.env.NODE_ENV === "production", // make this https if environment is production

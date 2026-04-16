@@ -7,7 +7,8 @@
     "dev": "nodemon backend/server.js",
     "start": "node backend/server.js",
     "prettier": "npx prettier . --write",
-    "build": "npm ci && npm ci --prefix frontend && npm run build --prefix frontend"
+    "build": "npm ci && npm ci --prefix frontend && npm run build --prefix frontend",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
