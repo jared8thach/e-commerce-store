@@ -8,7 +8,8 @@
     "start": "node backend/server.js",
     "prettier": "npx prettier . --write",
     "build": "npm ci && npm ci --prefix frontend && npm run build --prefix frontend",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,9 @@
     "stripe": "^16.8.0"
   },
   "devDependencies": {
+    "@vitest/coverage-istanbul": "^4.1.4",
+    "@vitest/coverage-v8": "^4.1.4",
+    "@vitest/ui": "^4.1.4",
     "nodemon": "^3.1.4",
     "prettier": "3.8.2",
     "vitest": "^4.1.4"

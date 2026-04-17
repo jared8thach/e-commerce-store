@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="0.0059913">
+    <testsuite name="backend/controllers/auth.test.js" timestamp="2026-04-17T15:24:17.094Z" hostname="Water" tests="1" failures="0" errors="0" skipped="0" time="0.0059913">
+        <testcase classname="backend/controllers/auth.test.js" name="generateTokens &gt; should generate tokens given {userId} @auth" time="0.0047762">
+        </testcase>
+    </testsuite>
+</testsuites>

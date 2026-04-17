@@ -1,2 +1,13 @@
 .env
 node_modules/
+coverage
+
+!artifacts/
+
+artifacts/*
+!artifacts/html/
+!artifacts/json/
+!artifacts/junit/
+
+artifacts/html/*
+!artifacts/html/*report.html*
