@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="1" failures="0" errors="0" time="0.0059913">
-    <testsuite name="backend/controllers/auth.test.js" timestamp="2026-04-17T15:24:17.094Z" hostname="Water" tests="1" failures="0" errors="0" skipped="0" time="0.0059913">
-        <testcase classname="backend/controllers/auth.test.js" name="generateTokens &gt; should generate tokens given {userId} @auth" time="0.0047762">
+<testsuites name="vitest tests" tests="16" failures="0" errors="0" time="0.0326271">
+    <testsuite name="backend/controllers/auth.controller.test.js" timestamp="2026-04-18T19:23:20.585Z" hostname="Water" tests="16" failures="0" errors="0" skipped="1" time="0.0326271">
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens given {userId} @auth" time="0.0107584">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens with {userId} as string" time="0.0014732">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens with null {userId}" time="0.0014327">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens with undefined {userId}" time="0.0009627">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens with empty string {userId}" time="0.0010421">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens with numeric {userId}" time="0.0008557">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should throw error when ACCESS_TOKEN_SECRET is missing" time="0.0013372">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should throw error when REFRESH_TOKEN_SECRET is missing" time="0.0005669">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should throw error when ACCESS_TOKEN_SECRET is empty" time="0.0005354">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should throw error when REFRESH_TOKEN_SECRET is empty" time="0.0012447">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate unique tokens on each call" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should include standard JWT claims" time="0.0016744">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should generate tokens in valid JWT format" time="0.0021786">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should not decode access token with refresh secret" time="0.0012514">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should not decode refresh token with access secret" time="0.0013866">
+        </testcase>
+        <testcase classname="backend/controllers/auth.controller.test.js" name="generateTokens(userId) &gt; should handle jwt.sign errors gracefully" time="0.0024559">
         </testcase>
     </testsuite>
 </testsuites>
